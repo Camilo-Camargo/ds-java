@@ -1,10 +1,10 @@
 package ds;
 
 public class LinkedList<T> {
-    private Node<T> head;
-    private Node<T> tail;
+    protected Node<T> head;
+    protected Node<T> tail;
 
-    private long size;
+    protected long size;
 
     public LinkedList() {
         this.size = 0;
@@ -68,12 +68,12 @@ public class LinkedList<T> {
         this.size--;
     }
 
-    public void sethead(Node<T> head) {
-        this.head = head;
-    }
-
     public Node<T> gethead() {
         return head;
+    }
+
+    public Node<T> getTail() {
+        return tail;
     }
 
     public long getSize() {
