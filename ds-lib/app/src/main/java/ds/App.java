@@ -2,15 +2,33 @@ package ds;
 
 public class App {
     public static void main(String[] args) { 
-        Stack<Integer> stack = new Stack<Integer>();
-        stack.push(15);
-        stack.push(11);
-        stack.push(12);
-        System.out.println(stack.getSize());
-        System.out.println(stack.pop().getValue());
-        System.out.println(stack.pop().getValue());
-        System.out.println(stack.pop().getValue());
-        System.out.println(stack.pop());
-        System.out.println(stack.getSize());
+        int a = 10;
+        int b = 11;
+
+        Graph<Integer> graph = new Graph<Integer>();
+        graph.add(a);
+        graph.add(b);
+
+        try{
+            graph.remove(a);
+        }catch(NullPointerException e){
+            System.out.println(e);
+        }
+
+        graph.add(a);
+
+        graph.addDirectEdge(a, b);
+        graph.addDirectEdge(b, a);
+        System.out.println(graph.getAdjVerticesList(a));
+        System.out.println(graph.getAdjVerticesList(b));
+
+        graph.removeDirectEdge(a, b);
+        graph.removeDirectEdge(b, a);
+        System.out.println(graph.getAdjVerticesList(a)); 
+        System.out.println(graph.getAdjVerticesList(b)); 
+
+        graph.addEdge(b, a);
+        System.out.println(graph.getAdjVerticesList(a)); 
+        System.out.println(graph.getAdjVerticesList(b));
     }
 }
