@@ -1,14 +1,14 @@
 package ds;
 
 public class Node<T>{
-    private T value;
-    private Node<T> next;
-    private Node<T> previous;
+    protected T value;
+    protected Node<T> next;
+    protected Node<T> previous;
 
-    public Node(){
+    protected Node(){
     }
 
-    public Node(T value){
+    protected Node(T value){
         this.value = value;
     }
 
